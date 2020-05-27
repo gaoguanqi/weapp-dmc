@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="container">
+	<!-- 轮播图 start -->
+	<view class="swiper-container">
+		<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+			<block wx:for="{{banners}}" wx:key="index" wx:for-item="item">
+				<swiper-item  data-index="{{index}}" bindtap="onBannerItemClick">
+					<image class="swiper-img" wx:if="{{item.pic}}" src="{{item.pic}}"></image>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<!-- 轮播图 end -->
+
+	<!-- tab start -->
+	<view class="tab-container">
+		<scroll-view scroll-x="{{true}}">
+			<view class="tab-box">
+				<block wx:for="{{tabList}}" wx:key="*this">
+					<view class="tab-item current">{{item}}</view>
+				</block>
+			</view>
+		</scroll-view>
+	</view>
+	<!-- tab end -->
+
+	<!-- 列表 start -->
+	<view class="list-container">
+		<view class="item" wx:for="{{listData}}" wx:key="index" wx:for-item="item" data-gid="{{item.id}}" bindtap="onListItemClick">
+			<view class="pic">
+				<image class="img" src="{{item.cover}}"></image>
+			</view>
+			<view class="content">
+				<view class="title">{{item.name}}</view>
+				<view class="desc">{{item.artistName}}</view>
+				<view class="price">￥{{item.playCount}}</view>
+			</view>
+		</view>
+		<view class="more-text" wx:if="{{hasMore}}">没有更多了~</view>
+	</view>
+
+	<!-- 列表 end -->
+</view>

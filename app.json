@@ -1,0 +1,46 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/shopcart/shopcart",
+    "pages/order/order",
+    "pages/mine/mine"
+  ],
+
+  "tabBar":{
+    "list": [
+      {
+        "pagePath": "pages/index/index", 
+        "text": "首页",                  
+        "iconPath": "images/nav/home-off.png",
+        "selectedIconPath": "images/nav/home-on.png"
+      },
+      {
+        "pagePath": "pages/shopcart/shopcart",
+        "text": "购物车",
+        "iconPath": "images/nav/cart-off.png",
+        "selectedIconPath": "images/nav/cart-on.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "images/nav/classification-off.png",
+        "selectedIconPath": "images/nav/classification-on.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/nav/my-off.png",
+        "selectedIconPath": "images/nav/my-on.png"
+      }
+    ]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#00afb4",
+    "navigationBarTitleText": "大麦茶商城",
+    "navigationBarTextStyle":"white",
+    "backgroundColor": "#00afb4"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
