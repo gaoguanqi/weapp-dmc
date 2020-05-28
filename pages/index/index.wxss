@@ -37,8 +37,13 @@
   margin-right: 10rpx;
 }
 
-.tab-container .tab-box .tab-item.current{
+.tab-container .tab-box .tab-item{
   color: #00afb4;
+}
+
+.tab-container .tab-box .tab-item.current{
+  color: #fff;
+  background-color: #00afb4;
 }
 
 .list-container{
@@ -96,7 +101,6 @@
 
 .list-container .item .content .price{
   font-size: 32rpx;
-  color: #ff4d00;
   flex: 1;
 
   padding-top: 10rpx;

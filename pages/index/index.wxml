@@ -16,8 +16,8 @@
 	<view class="tab-container">
 		<scroll-view scroll-x="{{true}}">
 			<view class="tab-box">
-				<block wx:for="{{tabList}}" wx:key="*this">
-					<view class="tab-item current">{{item}}</view>
+				<block wx:for="{{tabList}}"  wx:key="index" wx:for-item="item">
+					<view class="tab-item  {{tabIndex == index? 'current' : ''}}" data-index="{{index}}" bindtap="onTabItemClick">{{item.area}}</view>
 				</block>
 			</view>
 		</scroll-view>
@@ -33,7 +33,7 @@
 			<view class="content">
 				<view class="title">{{item.name}}</view>
 				<view class="desc">{{item.artistName}}</view>
-				<view class="price">￥{{item.playCount}}</view>
+				<view class="price c-price">￥{{item.playCount}}</view>
 			</view>
 		</view>
 		<view class="more-text" wx:if="{{hasMore}}">没有更多了~</view>

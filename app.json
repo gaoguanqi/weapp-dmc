@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/shopcart/shopcart",
     "pages/order/order",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/details/details"
   ],
 
   "tabBar":{

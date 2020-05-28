@@ -1,0 +1,66 @@
+<!--pages/details/details.wxml-->
+<view class="container">
+	<!-- 轮播图 start -->
+	<view class="swiper-container">
+		<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperChange">
+			<block wx:for="{{banners}}" wx:key="index" wx:for-item="item">
+				<swiper-item data-index="{{index}}" bindtap="onBannerItemClick">
+					<image class="swiper-img" wx:if="{{item}}" src="{{item}}"></image>
+				</swiper-item>
+			</block>
+		</swiper>
+		<view class="tips">
+			<text>{{current+1}}/{{banners.length}}</text>
+		</view>
+	</view>
+	<!-- 轮播图 end -->
+
+	<!-- mv 信息 start -->
+	<view class="mv-info">
+		<view class="price c-price">￥{{detailsData.likeCount}}</view>
+		<view class="share-box">
+			<view class="title">{{detailsData.desc}}</view>
+			<button class="share" open-type="share">
+				<view class="iconfont icon-fenxiang"></view>
+			</button>
+		</view>
+	</view>
+	<!-- mv 信息 end -->
+
+	<!-- 位置 start -->
+	<view class="address-box">
+		<view class="iconfont icon-location"></view>
+		<text class="address">北京市大兴区天宫院金融街融汇</text>
+	</view>
+	<!-- 位置 end -->
+
+	<!-- 详情 图片 start -->
+	<view class="details-box">
+    <block wx:for="{{banners}}" wx:key="index" wx:for-item="item">
+	  	<image class="img" mode="widthFix" src="{{item}}"></image>
+    </block>
+	</view>
+	<!-- 详情 图片 end -->
+
+	<!-- 底部按钮 start -->
+	<view class="bottom-nav">
+		<view class="small" bindtap="onHomeClick">
+			<view class="iconfont icon-home"></view>
+			<view>首页</view>
+		</view>
+
+		<view class="small" bindtap="onWeixinClick">
+			<view class="iconfont icon-weixin"></view>
+			<view>咨询</view>
+		</view>
+
+		<view class="small" bindtap="onCartClick">
+			<view class="iconfont icon-gouwuche"></view>
+			<view>购物车</view>
+		</view>
+
+    <view class="addcart" bindtap="onAddCartClick">加入购物车</view>
+    <view class="atbuy" bindtap="onBuyClick">立即购买</view>
+	</view>
+	<!-- 底部按钮 end -->
+</view>

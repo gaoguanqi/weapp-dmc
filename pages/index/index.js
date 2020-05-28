@@ -13,14 +13,16 @@ Page({
     interval: 2000,
     duration: 500,
     tabList:[
-      "全部",
-      "内地",
-      "港台",
-      "欧美",
-      "日本",
-      "韩国"
+      {area: "全部"},
+      {area: "内地"},
+      {area: "港台"},
+      {area: "欧美"},
+      {area: "日本"},
+      {area: "韩国"}
     ],
+    tabIndex: 0,
     listData: [],
+    area: "全部",
     offset: 0,
     limit: 10,
     hasMore: false
@@ -81,11 +83,13 @@ getBannerData:function(){
     wx.request({
       url: 'http://imaple.vip:3000/mv/all', //仅为示例，并非真实的接口地址
       data: {
+        area: self.data.area,
         offset: self.data.offset,
         limit: self.data.limit
       },
       header: {
-        'content-type': 'application/json' // 默认值
+        // 'content-type': 'application/json' // 默认值
+        'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
       },
       success (res) {
         console.log(res.data)
@@ -114,11 +118,12 @@ getBannerData:function(){
       wx.request({
         url: 'http://imaple.vip:3000/mv/all', //仅为示例，并非真实的接口地址
         data: {
+          area: self.data.area,
           offset: self.data.offset,
           limit: self.data.limit
         },
         header: {
-          'content-type': 'application/json' // 默认值
+          'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
         },
         success (res) {
           console.log(res.data)
@@ -150,11 +155,12 @@ getBannerData:function(){
     wx.request({
       url: 'http://imaple.vip:3000/mv/all', //仅为示例，并非真实的接口地址
       data: {
+        area: self.data.area,
         offset: self.data.offset,
         limit: self.data.limit
       },
       header: {
-        'content-type': 'application/json' // 默认值
+        'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
       },
       success (res) {
         console.log(res.data)
@@ -185,11 +191,21 @@ getBannerData:function(){
     })
   },
 
+  onTabItemClick: function(e){
+    let tabIndex = e.currentTarget.dataset.index;
+    this.setData({
+      tabIndex: tabIndex
+    })
+    this.data.area = this.data.tabList[tabIndex].area;
+    console.log("传递的数据::"+ this.data.area);
+    this.data.offset = 0;
+    this.data.listData = [];
+    this.getReListData();
+  },
   onListItemClick:function(e){
-      console.log(e);
-      wx.showToast({
-        title:  String(e.currentTarget.dataset.gid),
-        icon: 'none'
+      let mvid = String(e.currentTarget.dataset.gid);
+      wx.navigateTo({
+        url: "/pages/details/details?mvid="+mvid
       })
   },
   /**
