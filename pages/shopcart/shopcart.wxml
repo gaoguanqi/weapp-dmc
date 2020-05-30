@@ -1,30 +1,53 @@
 <!--pages/shopcart/shopcart.wxml-->
 <view class="container">
-  <view class="top-box">
-    <text class="goods-num">共1件商品</text>
-    <text class="goods-del">删除</text>
-  </view>
+	<view class="top-box">
+		<text class="goods-num">共{{orderList.length}}件商品</text>
+		<text class="goods-del">删除</text>
+	</view>
 
-<view class="goods-item">
-  <checkbox-group>
-    <checkbox value="1" checked="true"></checkbox>
-  </checkbox-group>
+<scroll-view scroll-y="true">
+	<view class="goods-box">
+		<block wx:for="{{orderList}}" wx:key="index">
+			<view class="goods-item">
+				<checkbox-group>
+					<checkbox value="1" checked="{{true}}"></checkbox>
+				</checkbox-group>
 
-  <image class="goods-img" src="/images/empty.png"></image>
+				<image class="goods-img" src="{{item.picUrl}}"></image>
 
-<view class="goods-info">
-  <view class="goods-title">商品商品商品商品商品商品商品商品商品商品商品商品商品商品</view>
-  <view class="goods-type">规格：标准</view>
+				<view class="goods-info">
+					<view class="goods-title">{{item.rcmdText}}</view>
+					<view class="goods-type">规格：标准</view>
 
-  <view class="action-box">
-    <text class="price c-price">￥30</text>
-    <view class="action">
-      <button class="mini-btn" type="default" size="mini">-</button>
-      <text class="action-num">1</text>
-      <button class="mini-btn" type="default" size="mini">+</button>
-    </view>
-  </view>
-</view>
-</view>
+					<view class="action-box">
+						<text class="price c-price">￥{{item.programCount}}</text>
+						<view class="action">
+							<button class="btn-reduce" type="default" size="mini">-</button>
+							<text class="action-num">1</text>
+							<button class="btn-add" type="default" size="mini">+</button>
+						</view>
+					</view>
+				</view>
+			</view>
+		</block>
+	</view>
+</scroll-view>
+	<view class="order-bottom">
+
+		<view class="order-all">
+			<checkbox-group bindchange="checkboxChange">
+				<checkbox value="1" checked="{{select}}"></checkbox>
+			</checkbox-group>
+			<view>全选</view>
+		</view>
+
+		<view class="order-total">
+      <text>总价</text>
+      <text class="total c-price">￥{{total}}</text>
+		</view>
+
+    <view class="order-pay">去结算</view>
+	</view>
+
 
 </view>

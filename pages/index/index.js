@@ -71,7 +71,8 @@ getBannerData:function(){
             banners: result.banners
           })
         }
-      }
+      }, fail: function (err) {},
+      complete: function () {}
     })
 },
 
@@ -100,7 +101,7 @@ getBannerData:function(){
           })
         }
       },
-      fail: function () {},
+      fail: function (err) {},
       complete: function () {
         wx.hideLoading();
       }
@@ -134,7 +135,7 @@ getBannerData:function(){
             })
           }
         },
-        fail: function () {},
+        fail: function (err) {},
         complete: function () {
           // 停止下拉刷新
           wx.stopPullDownRefresh();
@@ -177,7 +178,7 @@ getBannerData:function(){
           })
         }
       }, 
-      fail: function () {},
+      fail: function (err) {},
       complete: function () {
         wx.hideLoading();
       }

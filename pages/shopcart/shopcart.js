@@ -5,14 +5,54 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    orderList: [],
+    total: 0,
+    select: true
   },
 
+
+  getOrderData:function(){
+    let self = this;
+    wx.showLoading({
+      title: '加载中',
+    });
+      wx.request({
+        url: 'http://imaple.vip:3000/dj/today/perfered',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+        },
+        success (res) {
+          console.log(res.data)
+          let result = res.data;
+          if(result && result.code == 200){
+            let mtotal = 0;
+            result.data.push(result.data[1]);
+            result.data.forEach(function(item, index){
+              console.log(item.programCount)
+              mtotal += item.programCount;
+            })
+            
+              self.setData({
+                orderList: result.data,
+                total: mtotal
+              })
+          }
+        }, fail: function (err) {},
+        complete: function () {
+          wx.hideLoading();
+        }
+      })
+  },
+
+  checkboxChange:function(e){
+    let self = this;
+    console.log(e);
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getOrderData();
   },
 
   /**

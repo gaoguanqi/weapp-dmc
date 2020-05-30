@@ -101,6 +101,7 @@
 .details-box{
   padding-top: 20rpx;
   padding-bottom: 20rpx;
+  margin-bottom: 100rpx;
 }
 .details-box .img{
   width: 100%;
