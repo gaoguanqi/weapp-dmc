@@ -14,7 +14,7 @@
 
 	<!-- tab start -->
 	<view class="tab-container">
-		<scroll-view scroll-x="{{true}}">
+		<scroll-view scroll-x="true" bindscroll="scroll" style="width: 100%">
 			<view class="tab-box">
 				<block wx:for="{{tabList}}"  wx:key="index" wx:for-item="item">
 					<view class="tab-item  {{tabIndex == index? 'current' : ''}}" data-index="{{index}}" bindtap="onTabItemClick">{{item.area}}</view>

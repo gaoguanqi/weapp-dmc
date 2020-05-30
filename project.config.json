@@ -61,6 +61,20 @@
 					"id": -1,
 					"name": "详情",
 					"pathName": "pages/details/details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/shopcart/shopcart",
 					"scene": null
 				}
 			]

@@ -1,2 +1,48 @@
 <!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<view class="container">
+
+	<button wx:if="{{!user.nickName}}" class="btn-login" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+		<view class="login-info">
+			<image src="/images/avatar-default.png"></image>
+			<view class="login">
+				<view class="top">点击登录</view>
+			</view>
+		</view>
+	</button>
+
+
+
+	<view class="login-info" wx:if="{{user.nickName}}">
+		<image src="{{user.avatarUrl}}"></image>
+		<view class="login">
+			<view class="name">{{user.nickName}}</view>
+			<view class="level">{{user.country}}</view>
+		</view>
+	</view>
+
+	<view class="line-gap"></view>
+
+	<view class="mine-item" bindtap="onMyOrderClick">
+		<view class="item-text">我的订单 <text class="iconfont icon-next item-next"></text></view>
+	</view>
+
+	<view class="mine-item" bindtap="onMyCouponClick">
+		<view class="item-text">我的优惠劵<text class="iconfont icon-next item-next"></text></view>
+	</view>
+
+  <view class="mine-item" bindtap="onMyPointsClick">
+		<view class="item-text">我的积分<text class="iconfont icon-next item-next"></text></view>
+	</view>
+
+  <view class="mine-item" bindtap="onMyPetClick">
+		<view class="item-text">我的宠物<text class="iconfont icon-next item-next"></text></view>
+	</view>
+
+  <view class="mine-item" bindtap="onMyInfoClick">
+		<view class="item-text">个人信息<text class="iconfont icon-next item-next"></text></view>
+	</view>
+
+  <view class="mine-item" bindtap="onAccountSetClick">
+		<view class="item-text">账号设置<text class="iconfont icon-next item-next"></text></view>
+	</view>
+</view>

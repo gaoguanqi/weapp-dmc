@@ -1,1 +1,85 @@
 /* pages/mine/mine.wxss */
+.page{
+  height: 100%;
+}
+.container{
+  padding-top: 20rpx;
+  background-color: #f5f5f5;
+}
+
+.btn-login{
+  width: 100% !important;
+  padding: 0;
+  font-weight: normal;
+}
+
+.login-info{
+  display: flex;
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  align-items: center;
+
+}
+
+.login-info image{
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.login-info .login{
+  padding-left: 30rpx;
+}
+
+.login-info .top{
+  font-size: 38rpx;
+  color: #999;
+}
+
+.login-info .name{
+  font-size: 38rpx;
+  color: #000;
+}
+
+.login-info .level{
+  font-size: 32rpx;
+  color: #999;
+  padding-top: 8rpx;
+}
+
+.line{
+  width: 100%;
+  height: 1rpx;
+  background-color: #f5f5f5;
+}
+
+.line-gap{
+  width: 100%;
+  height: 10rpx;
+  background-color: #f5f5f5;
+}
+
+.mine-item{
+  display: flex;
+  width: 100%;
+  height: 90rpx;
+  background-color: #fff;
+  margin-top: 1rpx;
+  margin-bottom: 1rpx;
+  align-items: center;
+}
+
+.mine-item .item-text{
+  font-size: 32rpx;
+  color: #000;
+  line-height: 90rpx;
+  width: 100%;
+  padding-left: 20rpx;
+}
+
+.item-next{
+  font-size: 32rpx;
+  color:#abc;
+  float: right;
+  line-height: 90rpx;
+  padding-right: 20rpx;
+}

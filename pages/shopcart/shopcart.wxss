@@ -1,1 +1,28 @@
 /* pages/shopcart/shopcart.wxss */
+.goods-item{
+  display: flex;
+}
+
+.goods-item .goods-img{
+  width: 260rpx;
+  height: 280rpx;
+}
+.goods-item .goods-info .action-box{
+  display: flex;
+}
+
+
+
+.goods-item .goods-info{
+  flex: 1;
+  flex-direction:column;
+}
+
+
+.goods-item .goods-info .goods-title{
+  font-size: 38rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}

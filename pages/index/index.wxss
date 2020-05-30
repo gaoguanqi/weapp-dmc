@@ -19,13 +19,16 @@
   padding-right: 10rpx;
 }
 
-.tab-container .tab-box{
-  overflow: hidden;
-  width: 1200rpx;
+.tab-container scroll-view{
+  white-space: nowrap;
 }
 
+/* .tab-container .tab-box{
+  
+} */
+
 .tab-container .tab-box .tab-item{
-  float: left;
+  display: inline-block;
   width: 160rpx;
   height: 70rpx;
   border: solid 2rpx #00afb4;
